@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Launch PKM Server",
             "program": "${workspaceRoot}/server/server.js",
             "cwd": "${workspaceRoot}",
             "outFiles": [],
