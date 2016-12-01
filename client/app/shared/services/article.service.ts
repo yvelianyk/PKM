@@ -26,7 +26,6 @@ export class ArticleService {
     }
 
     getArticle(id: number): Promise<Article> {
-        console.log(id);
         return this.getArticles()
             .then(articles => articles.find(article => article.id === id));
     }
