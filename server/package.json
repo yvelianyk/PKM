@@ -5,8 +5,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "tsc && concurrently \"npm run tsc:w\"",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"node ./dist/start.js\"",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "postinstall": "typings install"
   },
   "author": "Slavko Vovkiv",
   "license": "MIT",
@@ -15,5 +19,10 @@
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "express-jwt": "^3.4.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "typescript": "^2.0.10",
+    "typings": "^2.0.0"
   }
 }

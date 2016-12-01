@@ -1,4 +1,6 @@
-'use strict';
+import { Router, Response, Request } from "express";
+
+const articlesRouter: Router = Router();
 
 const articles = [
     {
@@ -116,4 +118,8 @@ const articles = [
     }
 ];
 
-module.exports = articles;
+articlesRouter.get("/", (request: Request, response: Response) => {
+  response.json(articles);
+});
+
+export { articlesRouter };
