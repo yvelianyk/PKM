@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "prestart": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc && concurrently \"npm run tsc:w\"",
     "start": "tsc && concurrently \"npm run tsc:w\" \"node ./dist/start.js\"",
