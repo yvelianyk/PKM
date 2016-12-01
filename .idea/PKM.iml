@@ -3,10 +3,13 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/node_modules" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/client/dist" />
       <excludeFolder url="file://$MODULE_DIR$/client/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/client/typings" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/server/dist" />
       <excludeFolder url="file://$MODULE_DIR$/server/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/server/typings" />
       <excludeFolder url="file://$MODULE_DIR$/typings" />
     </content>
     <orderEntry type="inheritedJdk" />
