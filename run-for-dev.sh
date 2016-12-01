@@ -12,8 +12,8 @@
 ##############################################
 
 gnome-terminal  \
-    --tab -e "bash -c 'cd ~/PKM/client && npm start'" \
-    --tab -e "bash -c 'cd ~/PKM/server && npm run dev'" \
+    --tab -e "bash -c 'cd ./client && npm start'" \
+    --tab -e "bash -c 'cd ./server && npm run dev'" \
     --tab
 
 exit 0
