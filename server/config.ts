@@ -1,1 +1,6 @@
-export const serverPort = 3002;
+const config = {
+    env: process.env.ENV || 'development',
+    port: 3002
+};
+
+export { config };

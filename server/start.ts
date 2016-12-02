@@ -5,13 +5,13 @@
  */
 
 import { app } from './app';
-import { serverPort } from './config';
+import { config } from './config';
 import * as http from 'http';
 
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort(process.env.PORT || serverPort);
+const port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
 
 /**
