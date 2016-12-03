@@ -7,6 +7,7 @@ import * as cors from 'cors';
 import * as jwt from 'express-jwt';
 
 import { articlesRouter } from "./routes/articles";
+import { articlesPrivateRouter } from "./routes/private";
 
 const app: express.Application = express();
 
@@ -17,5 +18,6 @@ app.use(urlencoded({extended: true}));
 app.use(cors());
 
 app.use('/api/articles', articlesRouter);
+app.use('/api/private', articlesPrivateRouter);
 
 export { app }

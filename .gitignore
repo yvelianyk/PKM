@@ -40,3 +40,5 @@ dist
 # Optional REPL history
 .node_repl_history
 
+# Ignore account configuration for Auth0
+/server/secret-config.ts

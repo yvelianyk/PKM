@@ -6,7 +6,9 @@
                 <span class="sr-only">Toggle navigation</span>
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" routerLink="/admin">Вхід</a>
+            <a (click)=authService.login() *ngIf="!authService.loggedIn()" class="navbar-brand">Вхід</a>
+            <a *ngIf="authService.isAdmin()" class="navbar-brand" routerLink="admin">Адміністратор</a>
+            <a (click)=authService.logout() *ngIf="authService.loggedIn()" class="navbar-brand">Вихід</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

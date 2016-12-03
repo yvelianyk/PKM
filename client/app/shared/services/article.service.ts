@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import { ConfigService } from '../../core/config.service';
 
 import { Article } from '../models/article';
 import { ARTICLES } from './mock-articles';
@@ -9,7 +10,7 @@ import { ARTICLES } from './mock-articles';
 @Injectable()
 export class ArticleService {
 
-    private articlesUrl = 'http://localhost:3002/api/articles';
+    private articlesUrl = ConfigService.serverApiUrl + 'articles';
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
