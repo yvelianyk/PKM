@@ -1,6 +1,9 @@
 import { Router, Response, Request } from "express";
 import * as jwt from 'express-jwt';
+import * as requestModule from 'request';
 import { secretConfig } from '../secret-config';
+
+import { AuthService } from '../services/authService';
 
 const articlesPrivateRouter: Router = Router();
 const authCheck = jwt({
@@ -40,7 +43,14 @@ const articles = [
 ];
 
 articlesPrivateRouter.get("/", authCheck, (request: Request, response: Response) => {
-  response.json(articles);
+  AuthService.isAdmin(request.headers.authorization.split(' ')[1]).then((isAdmin) => {
+      if(isAdmin){
+          response.json(articles);
+      } else {
+        response.sendStatus(401).end();
+      }            
+  })
+  
 });
 
 export { articlesPrivateRouter };
