@@ -26,8 +26,8 @@ $ cd PKM
 $ bash ./run-server.sh
 ```
 run-server.sh script starts client and server parts of application with installing all dependencies.
-After finishing install app available on http://localhost:3002
-API Server also available on port 3002.
+After finishing install app available on http://localhost:3000
+API Server also available on port 3000.
 
 ### Installation steps for development purposes
 
@@ -39,8 +39,8 @@ $ cd PKM
 $ bash ./run-for-dev.sh
 ```
 run-for-dev.sh script automatically running client. Also, this script run watchers for server file changes. For debugging, developer must run server manually in IDE.
-After finishing install app available on http://localhost:3002
-API Server also available on port 3002.
+After finishing install app available on http://localhost:3000
+API Server also available on port 3000.
 
 ### Todos
 
