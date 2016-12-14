@@ -6,7 +6,6 @@ import 'rxjs/add/operator/toPromise';
 import { ConfigService } from '../../core/config.service';
 
 import { Article } from '../models/article';
-import { ARTICLES } from './mock-articles';
 
 @Injectable()
 export class ArticleService {
