@@ -4,5 +4,5 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
     static clientId = 'EkzeJaI9rvsOJfCVdRORspYBrddOlGDB';
     static domain = 'pkm.eu.auth0.com';
-    static serverApiUrl = 'http://localhost:3000/api/'
+    static serverApiUrl = 'http://' + window.location.host + '/api/'
 }
