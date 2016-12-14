@@ -21,7 +21,7 @@ PKM uses a number of open source projects to work properly:
 ### Installation steps for demo purposes
 
 ```sh
-$ git clone [git@github.com:yvelianyk/PKM.git]
+$ git clone git@github.com:yvelianyk/PKM.git
 $ cd PKM
 $ bash ./run-server.sh
 ```
@@ -34,7 +34,7 @@ API Server available on port 3002.
 ###### Developer must working with project separately for server and client side of application due to properly working of typescript compiler.
 
 ```sh
-$ git clone [git@github.com:yvelianyk/PKM.git]
+$ git clone git@github.com:yvelianyk/PKM.git
 $ cd PKM
 $ bash ./run-for-dev.sh
 ```
