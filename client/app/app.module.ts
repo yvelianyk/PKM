@@ -7,11 +7,12 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NavBarComponent } from './content/nav-bar/nav-bar.component';
 import { ContentComponent } from './content/content.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './content/footer/footer.component';
 
-import { ArticleDetailComponent } from './content/article-detail.component';
+import { ArticleListComponent } from './content/center/article-list.component';
+import { ArticleDetailComponent } from './content/center/article-detail.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { AuthService }     from './core/auth/auth.service';
@@ -31,6 +32,7 @@ import { ConfigService }     from './core/config.service';
         NavBarComponent,
         ContentComponent,
         FooterComponent,
+        ArticleListComponent,
         ArticleDetailComponent
     ],
     providers: [

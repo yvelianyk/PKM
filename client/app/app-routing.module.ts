@@ -7,7 +7,8 @@ import { AuthGuard } from './core/auth/auth-guard.service';
 import { AdminComponent } from './admin/admin.component';
 import { ContentComponent } from './content/content.component';
 
-import { ArticleDetailComponent } from './content/article-detail.component';
+import { ArticleListComponent } from './content/center/article-list.component';
+import { ArticleDetailComponent } from './content/center/article-detail.component';
 
 const routes: Routes = [
     {
@@ -16,17 +17,28 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'articles',
-        component: ContentComponent
-    },
-    {
-        path: 'articles/:id',
-        component: ArticleDetailComponent
-    },
-    {
         path: '',
-        redirectTo: '/articles',
+        redirectTo: '/content/articles',
         pathMatch: 'full'
+    },
+    {
+        path: 'content',
+        component: ContentComponent,
+        children: [
+            {
+                path: 'articles',
+                component: ArticleListComponent
+            },
+            {
+                path: 'articles/:id',
+                component: ArticleDetailComponent
+            },
+            {
+                path: '',
+                redirectTo: '/content/articles',
+                pathMatch: 'full'
+            }
+        ]
     }
 ];
 

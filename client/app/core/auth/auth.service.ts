@@ -40,7 +40,7 @@ export class AuthService {
     localStorage.removeItem('id_token');
 
     // Send the user back to the public deals page after logout
-    this.router.navigateByUrl('/articles');
+    this.router.navigateByUrl('/content/articles');
   }
 
   // Finally, this method will check to see if the user is logged in.

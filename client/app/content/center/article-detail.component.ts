@@ -3,11 +3,11 @@ import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { Article } from '../shared/models/article';
-import { ArticleService } from '../shared/services/article.service';
+import { Article } from '../../shared/models/article';
+import { ArticleService } from '../../shared/services/article.service';
 
 @Component({
-    templateUrl: './app/content/article-detail.component.html',
+    templateUrl: './app/content/center/article-detail.component.html',
     providers: [ArticleService]
 })
 

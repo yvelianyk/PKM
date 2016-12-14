@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
   canActivate() {
     // If user is not logged in we'll send them to the homepage 
     if (!this.auth.loggedIn()) {
-      this.router.navigateByUrl('/articles');
+      this.router.navigateByUrl('/content/articles');
       return false;
     }
     return true;
@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
   isAdmin() {
     // If user is not logged in we'll send them to the homepage 
     if (!this.auth.isAdmin()) {
-      this.router.navigateByUrl('/articles');
+      this.router.navigateByUrl('/content/articles');
       return false;
     }
     return true;
