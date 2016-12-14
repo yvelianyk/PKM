@@ -49,8 +49,7 @@ articlesPrivateRouter.get("/", authCheck, (request: Request, response: Response)
       } else {
         response.sendStatus(401).end();
       }            
-  })
-  
+  })  
 });
 
 export { articlesPrivateRouter };
