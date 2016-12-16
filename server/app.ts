@@ -8,6 +8,7 @@ import * as jwt from 'express-jwt';
 
 import { StaticService } from './services/staticService';
 import { articlesRouter } from "./routes/articles";
+import { articleRouter } from "./routes/article";
 import { articlesPrivateRouter } from "./routes/private";
 
 const app: express.Application = express();
@@ -22,6 +23,8 @@ app.use(cors());
 // Initialization of routes
 // ============================================================================================
 app.use('/api/articles', articlesRouter);
+//TODO: refactor routing for using single router object
+app.use('/api/articles/:id', articleRouter);
 app.use('/api/private', articlesPrivateRouter);
 
 // ============================================================================================

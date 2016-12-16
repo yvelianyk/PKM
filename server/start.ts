@@ -6,6 +6,7 @@
 
 import { app } from './app';
 import { config } from './config';
+import * as mongoose from 'mongoose';
 import * as http from 'http';
 
 /**
@@ -13,6 +14,17 @@ import * as http from 'http';
  */
 const port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
+
+/**
+ * Connect to Mongo Database
+ */
+mongoose.connect(config.MONGO_DB_URL);
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Connection to Database error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log('Connected to Database succesfully!')
+});
 
 /**
  * Create HTTP server.

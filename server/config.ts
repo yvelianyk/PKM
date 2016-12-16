@@ -6,6 +6,7 @@ const config = {
     port: 3000,
 
     // constants:
+    MONGO_DB_URL: 'mongodb://localhost/mydb',
     CLIENT_APP_DIR: path.join(__dirname, '../../client')
 };
 

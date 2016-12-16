@@ -34,8 +34,10 @@ export class ArticleService {
             .catch(this.handleError);
     }
 
-    getArticle(id: number): Promise<Article> {
-        return this.getArticles()
-            .then(articles => articles.find(article => article.id === id));
+    getArticle(id: string): Promise<Article> {
+        return this.http.get(this.articlesUrl + '/' + id)
+            .toPromise()
+            .then(response => response.json() as Article)
+            .catch(this.handleError);;
     }
 }
