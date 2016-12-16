@@ -10,6 +10,7 @@
 ###########################################
 
 gnome-terminal  \
+    --tab -e "bash -c 'sudo service mongod start'" \
     --tab -e "bash -c 'cd ./client && npm start'" \
     --tab -e "bash -c 'cd ./server && npm start'" \
     --tab
