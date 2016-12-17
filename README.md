@@ -17,6 +17,7 @@ PKM uses a number of open source projects to work properly:
 * [Bootstrap] - great UI boilerplate for modern web apps
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework
+* [MongoDB] - open-source cross-platform document-oriented database
 
 ### Installation steps for demo purposes
 
@@ -62,4 +63,6 @@ MIT
    [Bootstrap]: <https://startbootstrap.com/>
    [express]: <http://expressjs.com>
    [Angular2]: <https://angular.io/>
+   [MongoDB]: <https://www.mongodb.com/>
+   
 
