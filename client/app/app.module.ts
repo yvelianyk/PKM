@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { AUTH_PROVIDERS }      from 'angular2-jwt';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { RouterModule }   from '@angular/router';
+import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
@@ -12,37 +12,26 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './content/footer/footer.component';
 
 // ============================================================================================
-// Importing PrimeNG Modules
+// Importing components from PrimeNG
 // ============================================================================================
-import { ButtonModule } from 'primeng/primeng';
-import { DataGridModule } from 'primeng/primeng';
+import {ComponentsModule} from './shared/components/components.module';
 
 import { ArticleListComponent } from './content/center/article-list.component';
 import { ArticleDetailComponent } from './content/center/article-detail.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AuthService } from './core/auth/auth.service';
-import { AuthGuard } from './core/auth/auth-guard.service';
-import { ConfigService } from './core/config.service';
-
-// Init main modules of application
-let mainModules = [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule,
-    ButtonModule
-];
-
-// Init primeNg modules of application.
-// For adding new modules, add new module to array
-let primeNgModules = [
-    ButtonModule,
-    DataGridModule
-];
+import { AppRoutingModule }     from './app-routing.module';
+import { AuthService }     from './core/auth/auth.service';
+import { AuthGuard }     from './core/auth/auth-guard.service';
+import { ConfigService }     from './core/config.service';
 
 @NgModule({
-    imports: mainModules.concat(primeNgModules),
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule,
+        ComponentsModule
+    ],
     declarations: [
         AppComponent,
         AdminComponent,
@@ -58,7 +47,7 @@ let primeNgModules = [
         AuthGuard,
         ConfigService
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [ AppComponent ]
 })
 
-export class AppModule { }
+export class AppModule {}
