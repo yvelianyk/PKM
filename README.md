@@ -14,7 +14,7 @@ This application provides:
 PKM uses a number of open source projects to work properly:
 
 * [Angular2] - HTML enhanced for web apps!
-* [Bootstrap] - great UI boilerplate for modern web apps
+* [PrimeNG] - collection of rich UI components for Angular 2
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework
 * [MongoDB] - open-source cross-platform document-oriented database
@@ -60,7 +60,7 @@ MIT
 
 
    [node.js]: <http://nodejs.org>
-   [Bootstrap]: <https://startbootstrap.com/>
+   [PrimeNG]: <http://www.primefaces.org/primeng/#/>
    [express]: <http://expressjs.com>
    [Angular2]: <https://angular.io/>
    [MongoDB]: <https://www.mongodb.com/>
