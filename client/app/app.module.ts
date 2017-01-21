@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AUTH_PROVIDERS }      from 'angular2-jwt';
+import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { FormsModule } from '@angular/forms';
-import { RouterModule }   from '@angular/router';
-import { HttpModule }    from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
@@ -14,15 +14,15 @@ import { FooterComponent } from './content/footer/footer.component';
 // ============================================================================================
 // Importing components from PrimeNG
 // ============================================================================================
-import {ComponentsModule} from './shared/components/components.module';
+import { ComponentsModule } from './shared/components/components.module';
 
 import { ArticleListComponent } from './content/center/article-list.component';
 import { ArticleDetailComponent } from './content/center/article-detail.component';
 
-import { AppRoutingModule }     from './app-routing.module';
-import { AuthService }     from './core/auth/auth.service';
-import { AuthGuard }     from './core/auth/auth-guard.service';
-import { ConfigService }     from './core/config.service';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './core/auth/auth.service';
+import { AuthGuard } from './core/auth/auth-guard.service';
+import { ConfigService } from './core/config.service';
 
 @NgModule({
     imports: [
@@ -47,7 +47,7 @@ import { ConfigService }     from './core/config.service';
         AuthGuard,
         ConfigService
     ],
-    bootstrap: [ AppComponent ]
+    bootstrap: [AppComponent]
 })
 
-export class AppModule {}
+export class AppModule { }
