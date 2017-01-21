@@ -25,9 +25,10 @@
             '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
             '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
             // other libraries
-            'rxjs':                      'npm:rxjs',
+            'rxjs': 'npm:rxjs',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-            "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt.js"
+            "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt.js",
+            'primeng': 'npm:primeng'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -36,6 +37,9 @@
                 defaultExtension: 'js'
             },
             rxjs: {
+                defaultExtension: 'js'
+            },
+            primeng: {
                 defaultExtension: 'js'
             }
         }
