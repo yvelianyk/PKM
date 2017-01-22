@@ -1,29 +1,15 @@
-<h1>administrator</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-preview" *ngFor="let article of articles">
-                <a [routerLink]="['/content/articles', article._id]" >
-                    <h2 class="post-title">
-                        {{article.title}}
-                    </h2>
-                    <h3 class="post-subtitle">
-                        {{article.subtitle}}
-                    </h3>
-                </a>
-                <p class="post-meta">Опубліковано <a href="#">{{article.author}}</a>
-                    {{article.created | date: 'dd/MM/yyyy'}}
-                </p>
-            </div>
-            <hr>
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">Попередні публікації &rarr;</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<p-growl [value]="resMessages" sticky="sticky"></p-growl>
+<h1 class="first">Створити статтю</h1>
 
-<hr>
+<h3 class="first">Заголовок</h3>
+<input  type="text" size="30" pInputText [(ngModel)]="newArticle.title" />
+
+<h3 class="first">Підзаголовок</h3>
+<input  type="text" size="30" pInputText [(ngModel)]="newArticle.subtitle" />
+
+<h3 class="first">Автор</h3>
+<input  type="text" size="30" pInputText [(ngModel)]="newArticle.author" />
+
+<p-editor [(ngModel)]="newArticle.content" [style]="{'height':'320px'}"></p-editor>
+
+<button pButton type="button" (click)="createArticle()" label="Створити"></button>

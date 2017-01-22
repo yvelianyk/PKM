@@ -7,6 +7,8 @@ import { ConfigService } from '../core/config.service';
 import { Article } from '../shared/models/article';
 import { ArticleService } from '../shared/services/article.service';
 
+import { Message } from 'primeng/primeng';
+
 @Component({
     selector: 'admin-component',
     templateUrl: './app/admin/admin.component.html',
@@ -14,15 +16,36 @@ import { ArticleService } from '../shared/services/article.service';
 })
 
 export class AdminComponent {
-    articles: Article[];
 
-    constructor(private articleService:ArticleService) {}
+    constructor(private articleService: ArticleService) { }
 
-    getArticles():void {
-        this.articleService.getPrivateArticles().then(articles => this.articles = articles);
+    private clearForm(): void {
+        this.newArticle = {
+            title: '',
+            subtitle: '',
+            content: '',
+            author: ''
+        }
     }
 
-    ngOnInit():void {
-        this.getArticles();
+    newArticle: Article;
+
+    resMessages: Message[] = [];
+
+    ngOnInit(): void {
+        this.clearForm();
+    }
+
+    createArticle(): void {
+        this.articleService.newArticle(this.newArticle).then((res) => {
+            this.clearForm();
+            this.resMessages = [];
+            this.resMessages.push({
+                severity: 'success',
+                summary: 'Збережено',
+                detail: 'Стаття збережена'
+            })
+        })
+
     }
 }

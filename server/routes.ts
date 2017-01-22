@@ -16,6 +16,12 @@ const routes = [
     "path": "/api/private",
     "handler": "getPrivateArticles",
     "role": "admin"
+  },
+  {
+    "method": "post",
+    "path": "/api/articles",
+    "handler": "newArticle",
+    "role": "admin"
   }
 ]
 

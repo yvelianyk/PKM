@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, RequestOptions } from '@angular/http';
 import { AuthHttp } from 'angular2-jwt';
 
 import 'rxjs/add/operator/toPromise';
@@ -38,6 +38,15 @@ export class ArticleService {
         return this.http.get(this.articlesUrl + '/' + id)
             .toPromise()
             .then(response => response.json() as Article)
+            .catch(this.handleError);;
+    }
+
+    newArticle(article: Article): Promise<{}> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.authHttp.post(this.articlesUrl, {article : article}, options)
+            .toPromise()
+            .then(response => response.json())
             .catch(this.handleError);;
     }
 }

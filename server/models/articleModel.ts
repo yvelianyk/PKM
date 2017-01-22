@@ -4,8 +4,8 @@ interface IArticle{
     title: string;
     subtitle: string;
     content: string;
-    created: Date;
-    updated: Date;
+    created?: number;
+    updated?: number;
     author: string;
 }
 
@@ -20,9 +20,9 @@ var articleSchema = new mongoose.Schema({
 })
 .pre('save', function(next) {
     if (!this.created) {
-      this.created = new Date();
+      this.created = new Date().getTime();
     }
-    this.updated = new Date();
+    this.updated = new Date().getTime();
     next();
 });
 
